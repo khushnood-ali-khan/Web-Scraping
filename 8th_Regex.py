@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-import re
+import re       #Regular Expression
 
 url = "https://webscraper.io/test-sites/e-commerce/allinone/computers/laptops"
 req = requests.get(url)
