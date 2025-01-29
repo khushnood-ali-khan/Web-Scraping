@@ -38,5 +38,5 @@ data = pd.DataFrame({
 })
 
 # print(data)
-# data.to_csv("data.csv")       #Save to csv format file
-data.to_csv("data1.csv")
+# data.to_csv("9th_data.csv")       #Save to csv format file
+data.to_csv("9th_data1.csv")
