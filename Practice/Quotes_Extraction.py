@@ -16,7 +16,7 @@ for quote in body:
 
     lines_list.append(lines)
     author_list.append(authors)
-    tag_list.append(tags)
+    tag_list.append(", ".join(tags))
 
 df = pd.DataFrame({
     "Lines":lines_list,
