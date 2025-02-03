@@ -6,12 +6,13 @@ url = "https://www.timeanddate.com/weather/"
 req = requests.get(url)
 soup = BeautifulSoup(req.text,"lxml")
 table = soup.find("table", class_ = "zebra fw tb-theme")
-body = table.find("tbody")
+body = table.find_all("tr")
+
 
 report_list = []
-
-for report in body.find_all("tr"):
-    # time = report.find("")
-    report_list.append(report.text)
+report = 1
+for report in body:
+    location = report.find_all("td")
+    report_list.append([data.text.strip() for data in location])
 
 print(report_list)
