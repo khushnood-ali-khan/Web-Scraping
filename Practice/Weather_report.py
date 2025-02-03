@@ -10,9 +10,16 @@ body = table.find_all("tr")
 
 
 report_list = []
-report = 1
 for report in body:
     location = report.find_all("td")
-    report_list.append([data.text.strip() for data in location])
+    total_report = [data.text.strip() for data in location if data.text.strip()]
+    if len(total_report) > 3:
+        total_report.insert(3, "") 
+    if len(total_report) > 6:
+        total_report.insert(6 ,"") 
 
-print(report_list)
+    report_list.append(total_report)
+
+df = pd.DataFrame(report_list)
+df.to_csv("Weather Report.csv")
+# print(report_list)
